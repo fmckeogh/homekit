@@ -1,0 +1,28 @@
+---
+created: "2019-04-29T13:50:13.600922Z"
+creator: insta@0.7.4
+source: homekit/src/advertise.rs
+expression: "Data::new(Interval::_501_1250MS, PairingStatus::NotPaired, 188899839028173,\n          AccessoryCategory::Lightbulb, 1, 1).as_adstructure()"
+---
+Unknown {
+    ty: 255,
+    data: [
+        76,
+        0,
+        6,
+        173,
+        1,
+        171,
+        205,
+        171,
+        205,
+        171,
+        205,
+        0,
+        5,
+        0,
+        1,
+        1,
+        2
+    ]
+}

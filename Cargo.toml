@@ -1,0 +1,14 @@
+[workspace]
+members = [
+    "homekit",
+    "homekit-demo",
+]
+
+[profile.dev]
+opt-level = "s"
+
+[profile.release]
+opt-level = "s"
+debug = true
+lto = true
+codegen-units = 1
