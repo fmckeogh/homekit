@@ -187,14 +187,12 @@ const APP: () = {
     fn idle() -> ! {
         // Drain the logging buffer through the serial connection
         loop {
-            if cfg!(feature = "log") {
-                while let Ok(grant) = resources.LOG_SINK.read() {
-                    for chunk in grant.buf().chunks(255) {
-                        resources.SERIAL.write(chunk).unwrap();
-                    }
-
-                    resources.LOG_SINK.release(grant.buf().len(), grant);
+            while let Ok(grant) = resources.LOG_SINK.read() {
+                for chunk in grant.buf().chunks(255) {
+                    resources.SERIAL.write(chunk).unwrap();
                 }
+
+                resources.LOG_SINK.release(grant.buf().len(), grant);
             }
 
             if resources.BLE_R.has_work() {
