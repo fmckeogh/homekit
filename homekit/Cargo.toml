@@ -1,11 +1,16 @@
 [package]
 name = "homekit"
-version = "0.1.0"
+version = "0.0.0"
 authors = ["Ferdia McKeogh <ferdia@mckeogh.tech>"]
 edition = "2018"
+description = "`no_std` HomeKit Accessory Protocol implementation"
+license = "MPL-2.0"
+documentation = "https://docs.rs/homekit"
+homepage = "https://github.com/chocol4te/homekit"
+repository = "https://github.com/chocol4te/homekit"
 
 [dependencies]
-rubble = { git = "https://github.com/jonas-schievink/rubble.git", features = ["log"] }
+rubble = { version = "0.0.2" , features = ["log"] }
 byteorder = { version = "1.3.1", default-features = false }
 
 [dev-dependencies]
