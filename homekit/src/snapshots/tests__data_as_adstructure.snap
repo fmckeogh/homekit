@@ -1,5 +1,5 @@
 ---
-created: "2019-04-29T13:50:13.600922Z"
+created: "2019-04-29T14:36:35.250790Z"
 creator: insta@0.7.4
 source: homekit/src/advertise.rs
 expression: "Data::new(Interval::_501_1250MS, PairingStatus::NotPaired, 188899839028173,\n          AccessoryCategory::Lightbulb, 1, 1).as_adstructure()"

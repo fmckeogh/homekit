@@ -7,14 +7,11 @@ extern crate panic_semihosting;
 mod logger;
 
 use {
-    bbqueue::{bbq, BBQueue, Consumer, Producer},
+    bbqueue::{bbq, BBQueue, Consumer},
     byteorder::{ByteOrder, LittleEndian},
     core::fmt::Write,
-    core::{cell::RefCell, fmt},
-    cortex_m::interrupt::{self, Mutex},
     cortex_m_semihosting::hprintln,
     homekit::{self, advertise},
-    log::{LevelFilter, Log, Metadata, Record},
     nrf52810_hal::{
         self as hal,
         gpio::Level,
@@ -35,7 +32,7 @@ use {
     },
     rubble_nrf52::{
         radio::{BleRadio, PacketBuffer},
-        timer::{BleTimer, StampSource},
+        timer::BleTimer,
     },
 };
 
@@ -145,7 +142,7 @@ const APP: () = {
                         1,
                         1,
                     )
-                    .as_adstructure()
+                    .as_adstructure(),
                 ],
                 &mut radio,
                 tx_cons,
