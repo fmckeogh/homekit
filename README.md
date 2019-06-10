@@ -5,6 +5,10 @@
 [![Build Status](https://travis-ci.org/chocol4te/homekit.svg?branch=master)](https://travis-ci.org/chocol4te/homekit)
 [![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=chocol4te/homekit)](https://dependabot.com)
 
+Currently, all the demo does is show up in the `Home` app. Nothing else works.
+
+<img src="media/add_accessory.png" width="50%">
+
 Initial development will be aimed towards implementing the protocol for the Bluetooth LE transport but I fully intend to add support for IP, whilst keeping the core implemenation `no_std`.
 
 ## Contributing
