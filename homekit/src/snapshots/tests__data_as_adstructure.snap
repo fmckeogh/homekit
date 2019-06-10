@@ -1,5 +1,5 @@
 ---
-created: "2019-04-29T14:36:35.250790Z"
+created: "2019-06-10T18:08:37.088326Z"
 creator: insta@0.7.4
 source: homekit/src/advertise.rs
 expression: "Data::new(Interval::_501_1250MS, PairingStatus::NotPaired, 188899839028173,\n          AccessoryCategory::Lightbulb, 1, 1).as_adstructure()"
@@ -23,6 +23,6 @@ Unknown {
         0,
         1,
         1,
-        2
-    ]
+        2,
+    ],
 }
