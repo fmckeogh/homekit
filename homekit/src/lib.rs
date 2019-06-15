@@ -5,3 +5,4 @@
 extern crate std;
 
 pub mod advertise;
+pub mod attributes;

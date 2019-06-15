@@ -7,8 +7,8 @@ publish = false
 
 [dependencies]
 homekit = { path = "../homekit" }
-rubble = { git = "https://github.com/jonas-schievink/rubble.git", rev = "ee87377", features = ["log"] }
-rubble-nrf52 = { git = "https://github.com/jonas-schievink/rubble.git", rev = "ee87377", features = ["52810"] }
+rubble = { git = "https://github.com/chocol4te/rubble.git", rev = "b82d0a2", features = ["log"] }
+rubble-nrf52 = { git = "https://github.com/chocol4te/rubble.git", rev = "b82d0a2", features = ["52810"] }
 cortex-m = "0.6.0"
 cortex-m-semihosting = "0.3.3"
 cortex-m-rtfm = "0.4.3"

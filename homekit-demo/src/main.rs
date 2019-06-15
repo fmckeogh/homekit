@@ -11,7 +11,11 @@ use {
     byteorder::{ByteOrder, LittleEndian},
     core::fmt::Write,
     cortex_m_semihosting::hprintln,
-    homekit::{self, advertise},
+    homekit::{
+        self,
+        advertise::{self, AdvertiseData},
+        attributes::GattServer,
+    },
     nrf52810_hal::{
         self as hal,
         gpio::Level,
@@ -21,7 +25,6 @@ use {
     },
     rtfm::app,
     rubble::{
-        gatt::GattServer,
         l2cap::{BleChannelMap, L2CAPState},
         link::{
             ad_structure::AdStructure, queue, AddressKind, DeviceAddress, HardwareInterface,
@@ -133,12 +136,12 @@ const APP: () = {
             .start_advertise(
                 Duration::from_millis(200),
                 &[
-                    AdStructure::CompleteLocalName("Switch"),
-                    advertise::Data::new(
+                    AdStructure::CompleteLocalName("Sensor"),
+                    AdvertiseData::new(
                         advertise::Interval::_501_1250MS,
                         advertise::PairingStatus::NotPaired,
                         1234,
-                        advertise::AccessoryCategory::Switch,
+                        advertise::AccessoryCategory::Sensor,
                         1,
                         1,
                     )

@@ -3,9 +3,9 @@ use {
     rubble::link::ad_structure::AdStructure,
 };
 
-pub struct Data([u8; 17]);
+pub struct AdvertiseData([u8; 17]);
 
-impl<'a, 'b> Data
+impl<'a, 'b> AdvertiseData
 where
     'a: 'b,
 {
