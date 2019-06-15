@@ -155,7 +155,7 @@ mod tests {
     fn test_snapshots() {
         assert_debug_snapshot_matches!(
             "data_as_adstructure",
-            Data::new(
+            AdvertiseData::new(
                 Interval::_501_1250MS,
                 PairingStatus::NotPaired,
                 188899839028173,

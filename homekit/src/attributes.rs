@@ -1,8 +1,8 @@
 use rubble::{
     att::{AttHandle, AttPermission, AttUuid, Attribute, AttributeProvider},
-    uuid::{Uuid16, Uuid},
-    Error,
     utils::HexSlice,
+    uuid::{Uuid, Uuid16},
+    Error,
 };
 
 pub struct GattServer<'a> {
@@ -13,7 +13,10 @@ impl<'a> GattServer<'a> {
     pub fn new() -> Self {
         Self {
             attributes: [Attribute {
-                att_type: AttUuid::Uuid128(Uuid::from_bytes([0x00, 0x00,0x00,0xA2,0x00,0x00,0x10,0x00,0x80,0x00,0x00,0x26,0xBB,0x76,0x52,0x91])),
+                att_type: AttUuid::Uuid128(Uuid::from_bytes([
+                    0x00, 0x00, 0x00, 0xA2, 0x00, 0x00, 0x10, 0x00, 0x80, 0x00, 0x00, 0x26, 0xBB,
+                    0x76, 0x52, 0x91,
+                ])),
                 handle: AttHandle::from_raw(0x0001),
                 value: HexSlice(&[]),
                 permission: AttPermission::default(),
