@@ -17,4 +17,4 @@ Issues and PRs very welcome :)
 
 ## License
 
-Mozilla Public License Version 2.0([LICENSE](LICENSE) or https://www.mozilla.org/en-US/MPL/2.0/)
+Mozilla Public License Version 2.0 ([LICENSE](LICENSE) or https://www.mozilla.org/en-US/MPL/2.0/)
