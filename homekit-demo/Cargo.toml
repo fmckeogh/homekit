@@ -11,7 +11,7 @@ rubble = { git = "https://github.com/chocol4te/rubble.git", rev = "b82d0a2", fea
 rubble-nrf52 = { git = "https://github.com/chocol4te/rubble.git", rev = "b82d0a2", features = ["52810"] }
 cortex-m = "0.6.0"
 cortex-m-semihosting = "0.3.3"
-cortex-m-rtfm = "0.4.3"
+cortex-m-rtfm = "0.5.2"
 cortex-m-rt = "0.6.8"
 nrf52810-hal = { version = "0.8.1", features = ["rt"] }
 panic-semihosting = "0.5.2"
