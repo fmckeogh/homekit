@@ -1,7 +1,4 @@
-use {
-    byteorder::{self, ByteOrder},
-    rubble::link::ad_structure::AdStructure,
-};
+use byteorder::{self, ByteOrder};
 
 pub struct AdvertiseData([u8; 17]);
 
@@ -50,11 +47,8 @@ where
         Self(inner)
     }
 
-    pub fn as_adstructure(&'a self) -> AdStructure<'b> {
-        AdStructure::Unknown {
-            ty: 0xFF,
-            data: &self.0,
-        }
+    pub fn as_slice(&self) -> &[u8] {
+        self.0.as_slice()
     }
 }
 
@@ -143,27 +137,5 @@ impl AccessoryCategory {
             AccessoryCategory::AirPurifier => 19,
             AccessoryCategory::Reserved => 65535,
         }
-    }
-}
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-    use insta::assert_debug_snapshot_matches;
-
-    #[test]
-    fn test_snapshots() {
-        assert_debug_snapshot_matches!(
-            "data_as_adstructure",
-            AdvertiseData::new(
-                Interval::_501_1250MS,
-                PairingStatus::NotPaired,
-                188899839028173,
-                AccessoryCategory::Lightbulb,
-                1,
-                1,
-            )
-            .as_adstructure()
-        )
     }
 }
