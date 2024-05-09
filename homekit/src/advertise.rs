@@ -1,4 +1,9 @@
-use byteorder::{self, ByteOrder};
+use {
+    byteorder::{self, ByteOrder},
+    nrf_softdevice::ble::advertisement_builder::{
+        AdvertisementDataType, LegacyAdvertisementBuilder, LegacyAdvertisementPayload,
+    },
+};
 
 pub struct AdvertiseData([u8; 17]);
 
@@ -49,6 +54,15 @@ where
 
     pub fn as_slice(&self) -> &[u8] {
         self.0.as_slice()
+    }
+
+    pub fn as_payload(&self) -> LegacyAdvertisementPayload {
+        LegacyAdvertisementBuilder::new()
+            .raw(
+                AdvertisementDataType::MANUFACTURER_SPECIFIC_DATA,
+                self.as_slice(),
+            )
+            .build()
     }
 }
 

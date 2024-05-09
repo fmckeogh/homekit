@@ -1,6 +1,6 @@
 [workspace]
 resolver = "2"
-members = ["homekit", "washmon"]
+members = ["homekit", "nostd_srp", "washmon"]
 
 [profile.dev]
 opt-level = "s"

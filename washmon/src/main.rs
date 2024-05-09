@@ -15,9 +15,7 @@ use {
     homekit::advertise,
     nrf_softdevice::{
         ble::{
-            advertisement_builder::{
-                AdvertisementDataType, LegacyAdvertisementBuilder, LegacyAdvertisementPayload,
-            },
+            advertisement_builder::{LegacyAdvertisementBuilder, LegacyAdvertisementPayload},
             peripheral,
         },
         raw, Softdevice,
@@ -35,21 +33,15 @@ async fn advertiser_task(sd: &'static Softdevice) -> ! {
     let mut config = peripheral::Config::default();
     config.interval = 50;
 
-    let adv_data: LegacyAdvertisementPayload = LegacyAdvertisementBuilder::new()
-        .raw(
-            AdvertisementDataType::MANUFACTURER_SPECIFIC_DATA,
-            homekit::advertise::AdvertiseData::new(
-                advertise::Interval::_501_1250MS,
-                advertise::PairingStatus::NotPaired,
-                1234,
-                advertise::AccessoryCategory::Sensor,
-                1,
-                1,
-            )
-            .as_slice(),
-        )
-        .short_name("Hello")
-        .build();
+    let adv_data = homekit::advertise::AdvertiseData::new(
+        advertise::Interval::_501_1250MS,
+        advertise::PairingStatus::NotPaired,
+        1234,
+        advertise::AccessoryCategory::Sensor,
+        1,
+        1,
+    )
+    .as_payload();
 
     // but we can put it in the scan data
     // so the full name is visible once connected
